@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>simple interest</title>
+    </head>
+<body>
+<script>
+//array of values
+let data = 
+[
+{principal:2500,time:1.8},
+{principal:1000,time:5},
+{principal:3000,time:1},
+{principal:2000,time:3},
+];
+//function for interestCalculator
+function interestCalculator(interest){
+    //empty array assigned to interestData
+let interestData=[];
+for(let a of data){
+    //initializing rate to zero
+let rate = 0;
+//conditional statements
+    if (a.principal >= 2500 && (a.time >= 1 && a.time < 3)){
+        rate = 3;
+    } 
+   else if (a.principal >= 2500 && a.time >= 3){
+       rate = 4;
+    }
+   else if (a.principal < 2500 && a.time <= 1){
+     rate=2;
+    }
+   else{
+       rate=1;
+   }
+   //assigning the formular of simple interest to calculator
+let interest=(a.principal * a.time * rate)/100;
+
+interestData.push({principal: a.principal, time:a.time, rate:rate, interest: interest});
+}
+console.log(interestData);  
+return interestData;
+}
+interestCalculator (data);
+</script>
+</body>
+</html>
